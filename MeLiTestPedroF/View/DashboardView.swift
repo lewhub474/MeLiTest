@@ -23,40 +23,35 @@ struct DashboardView: View {
                     if viewModel.isLoading {
                         ProgressView()
                             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    } else {
-                        if viewModel.articles.isEmpty {
-                            VStack {
-                                Spacer()
-                                Text("No se encontraron artículos.")
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                Spacer()
-                            }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        } else {
-                            ScrollView {
-                                ArticleListView(articles: viewModel.articles)
-                            }
-                            .scrollDismissesKeyboard(.interactively)
-                            .cornerRadius(5)
+                    } else if viewModel.showEmptyState {
+                        Spacer()
+                        Text("No se encontraron artículos.")
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                        Spacer()
+                    } else if viewModel.showArticleList {
+                        ScrollView {
+                            ArticleListView(articles: viewModel.articles)
                         }
+                        .scrollDismissesKeyboard(.interactively)
+                        .cornerRadius(5)
                     }
                 }
                 .onAppear {
                     viewModel.fetchArticles()
                 }
-            }.padding(.horizontal, 10)
-        }.alert("Error", isPresented: .constant(viewModel.errorMessage != nil), actions: {
+            }
+            .padding(.horizontal, 10)
+        }
+        .alert("Error", isPresented: viewModel.isPresentingError, actions: {
             Button("OK") {
-                viewModel.errorMessage = nil
+                viewModel.dismissError()
             }
         }, message: {
             Text(viewModel.errorMessage ?? "")
         })
-        
     }
 }
-
 
 #Preview {
     DashboardView()

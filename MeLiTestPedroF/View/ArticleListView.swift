@@ -14,7 +14,7 @@ struct ArticleListView: View {
         LazyVStack(spacing: 10) {
             ForEach(articles) { article in
                 NavigationLink(destination: ArticleDetailView(article: article)) {
-                    ArticleCard(article: article)
+                    ArticleCard(viewModel: ArticleCardViewModel(article: article))
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(PlainButtonStyle())
