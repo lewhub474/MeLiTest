@@ -12,13 +12,12 @@ struct ArticleCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Imagen del artículo
             AsyncImage(url: URL(string: article.image_url)) { phase in
                 switch phase {
                 case .success(let image):
                     image
                         .resizable()
-                        .aspectRatio(contentMode: .fit) // Mantiene proporciones sin recorte
+                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity)
                         .clipped()
                         .cornerRadius(12)

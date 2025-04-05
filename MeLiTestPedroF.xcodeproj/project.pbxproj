@@ -22,6 +22,8 @@
 		800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */; };
 		800132EB2DA0F84A00A75C35 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132EA2DA0F84A00A75C35 /* BackgroundView.swift */; };
 		800132ED2DA10D5B00A75C35 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132EC2DA10D5B00A75C35 /* SearchBar.swift */; };
+		800132F12DA1114500A75C35 /* NetworkingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132F02DA1114500A75C35 /* NetworkingProvider.swift */; };
+		800132F32DA111FF00A75C35 /* FetchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132F22DA111FF00A75C35 /* FetchArticlesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		800132EA2DA0F84A00A75C35 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		800132EC2DA10D5B00A75C35 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		800132F02DA1114500A75C35 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
+		800132F22DA111FF00A75C35 /* FetchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +116,11 @@
 			children = (
 				800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */,
 				800132B42DA0EA2E00A75C35 /* Assets.xcassets */,
+				800132EF2DA10DDA00A75C35 /* Networking */,
 				800132DB2DA0F6E600A75C35 /* View */,
 				800132DA2DA0F6E100A75C35 /* Model */,
 				800132DC2DA0F70D00A75C35 /* ViewModel */,
+				800132EE2DA10DD100A75C35 /* UseCases */,
 				800132E12DA0F78D00A75C35 /* Components */,
 				800132B62DA0EA2E00A75C35 /* Preview Content */,
 			);
@@ -181,6 +187,22 @@
 				800132EC2DA10D5B00A75C35 /* SearchBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		800132EE2DA10DD100A75C35 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				800132F22DA111FF00A75C35 /* FetchArticlesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		800132EF2DA10DDA00A75C35 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				800132F02DA1114500A75C35 /* NetworkingProvider.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +338,9 @@
 				800132EB2DA0F84A00A75C35 /* BackgroundView.swift in Sources */,
 				800132E72DA0F81800A75C35 /* ArticleCardView.swift in Sources */,
 				800132B32DA0EA2D00A75C35 /* DashboardView.swift in Sources */,
+				800132F32DA111FF00A75C35 /* FetchArticlesUseCase.swift in Sources */,
 				800132E52DA0F80200A75C35 /* ArticleListView.swift in Sources */,
+				800132F12DA1114500A75C35 /* NetworkingProvider.swift in Sources */,
 				800132B12DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift in Sources */,
 				800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */,
 				800132DE2DA0F74D00A75C35 /* Articles.swift in Sources */,

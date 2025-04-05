@@ -12,14 +12,14 @@ struct ArticleListView: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack(spacing: 16) {
+            LazyVStack(spacing: 10) {
                 ForEach(articles) { article in
                     NavigationLink(destination: ArticleDetailView(article: article)) {
                         ArticleCard(article: article)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 10)
                 }
             }
             .padding(.top)

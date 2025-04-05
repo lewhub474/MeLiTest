@@ -13,7 +13,6 @@ struct ArticleDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                // Imagen principal
                 AsyncImage(url: URL(string: article.image_url)) { phase in
                     switch phase {
                     case .success(let image):

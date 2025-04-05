@@ -12,7 +12,7 @@ struct SearchBar: View {
     var onSearch: () -> Void
     
     var body: some View {
-        HStack(spacing: 0) {
+        HStack() {
             TextField("Buscar artículos...", text: $text)
                 .padding(.horizontal, 12)
                 .padding(.vertical, 10)
@@ -26,7 +26,6 @@ struct SearchBar: View {
                     .scaledToFit()
                     .frame(width: 70, height: 70)
                     .foregroundColor(.white)
-                    .padding(10)
                     .clipShape(Circle())
             }
         }

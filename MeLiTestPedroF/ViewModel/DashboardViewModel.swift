@@ -6,45 +6,44 @@
 //
 
 import Foundation
+import Combine
 
 final class DashboardViewModel: ObservableObject {
     @Published var articles: [Article] = []
     @Published var searchText: String = ""
     @Published var isLoading = false
 
+    private var cancellables = Set<AnyCancellable>()
+    private let fetchArticlesUseCase = FetchArticlesUseCase()
+
+    init() {
+        setupSearchTextObserver()
+    }
+
+    private func setupSearchTextObserver() {
+        $searchText
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .removeDuplicates()
+            .sink { [weak self] text in
+                self?.fetchArticles()
+            }
+            .store(in: &cancellables)
+    }
+
     func fetchArticles() {
         isLoading = true
 
-        var urlString = "https://api.spaceflightnewsapi.net/v4/articles/?limit=20"
-
-        if !searchText.isEmpty {
-            urlString += "&search=\(searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
-        }
-
-        guard let url = URL(string: urlString) else {
-            isLoading = false
-            return
-        }
-
-        print("Fetching: \(url)")
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        fetchArticlesUseCase.execute(searchText: searchText) { [weak self] result in
             DispatchQueue.main.async {
-                self.isLoading = false
-            }
-
-            if let data = data {
-                do {
-                    let decoded = try JSONDecoder().decode(ArticleResponse.self, from: data)
-                    DispatchQueue.main.async {
-                        self.articles = decoded.results
-                    }
-                } catch {
-                    print("Decoding error: \(error)")
+                self?.isLoading = false
+                switch result {
+                case .success(let articles):
+                    self?.articles = articles
+                case .failure(let error):
+                    print("Error fetching articles: \(error)")
+                    self?.articles = []
                 }
-            } else if let error = error {
-                print("Fetch error: \(error)")
             }
-        }.resume()
+        }
     }
 }

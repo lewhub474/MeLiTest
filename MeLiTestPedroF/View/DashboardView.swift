@@ -9,31 +9,47 @@ import SwiftUI
 
 struct DashboardView: View {
     @StateObject private var viewModel = DashboardViewModel()
-
+    
     var body: some View {
         NavigationStack {
             BackgroundView {
                 VStack(spacing: 16) {
-                    SearchBar(text: $viewModel.searchText, onSearch: viewModel.fetchArticles)
-                        .padding(.top)
-
+                    SearchBar(
+                        text: $viewModel.searchText,
+                        onSearch: {
+                            viewModel.fetchArticles()
+                        }
+                    )
                     if viewModel.isLoading {
                         ProgressView()
-                            .frame(maxWidth: .infinity, alignment: .center)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     } else {
-                        ScrollView {
-                            ArticleListView(articles: viewModel.articles)
+                        if viewModel.articles.isEmpty {
+                            VStack {
+                                Spacer()
+                                Text("No se encontraron artículos.")
+                                    .foregroundColor(.secondary)
+                                    .multilineTextAlignment(.center)
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        } else {
+                            ScrollView {
+                                ArticleListView(articles: viewModel.articles)
+                            }
+                            .scrollDismissesKeyboard(.interactively)
+                            .cornerRadius(5)
                         }
-                        .scrollDismissesKeyboard(.interactively)
                     }
                 }
                 .onAppear {
                     viewModel.fetchArticles()
                 }
-            }
+            }.padding(.horizontal, 10)
         }
     }
 }
+
 
 #Preview {
     DashboardView()

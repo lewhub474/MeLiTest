@@ -10,11 +10,11 @@ import SwiftUI
 struct BackgroundView<Content: View>: View {
     let content: () -> Content
     @State private var isLandscape: Bool = UIDevice.current.orientation.isLandscape
-
+    
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content
     }
-
+    
     var body: some View {
         ZStack {
             Image(isLandscape ? "background_landscape" : "background")
@@ -23,7 +23,7 @@ struct BackgroundView<Content: View>: View {
                 .frame(width: UIScreen.main.bounds.width,
                        height: UIScreen.main.bounds.height)
                 .ignoresSafeArea()
-
+            
             VStack {
                 content()
             }
@@ -37,7 +37,7 @@ struct BackgroundView<Content: View>: View {
             updateOrientation()
         }
     }
-
+    
     private func updateOrientation() {
         let orientation = UIDevice.current.orientation
         if orientation.isLandscape || orientation.isPortrait {
