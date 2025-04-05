@@ -28,7 +28,7 @@ struct DashboardView: View {
                             VStack {
                                 Spacer()
                                 Text("No se encontraron artículos.")
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.white)
                                     .multilineTextAlignment(.center)
                                 Spacer()
                             }
@@ -46,7 +46,14 @@ struct DashboardView: View {
                     viewModel.fetchArticles()
                 }
             }.padding(.horizontal, 10)
-        }
+        }.alert("Error", isPresented: .constant(viewModel.errorMessage != nil), actions: {
+            Button("OK") {
+                viewModel.errorMessage = nil
+            }
+        }, message: {
+            Text(viewModel.errorMessage ?? "")
+        })
+        
     }
 }
 

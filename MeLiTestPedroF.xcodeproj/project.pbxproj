@@ -64,6 +64,7 @@
 		800132EC2DA10D5B00A75C35 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		800132F02DA1114500A75C35 /* NetworkingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProvider.swift; sourceTree = "<group>"; };
 		800132F22DA111FF00A75C35 /* FetchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesUseCase.swift; sourceTree = "<group>"; };
+		800132F42DA17BD800A75C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 		800132AF2DA0EA2D00A75C35 /* MeLiTestPedroF */ = {
 			isa = PBXGroup;
 			children = (
+				800132F42DA17BD800A75C35 /* Info.plist */,
 				800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */,
 				800132B42DA0EA2E00A75C35 /* Assets.xcassets */,
 				800132EF2DA10DDA00A75C35 /* Networking */,
@@ -513,6 +515,7 @@
 				DEVELOPMENT_TEAM = PQ6M67LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeLiTestPedroF/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -543,6 +546,7 @@
 				DEVELOPMENT_TEAM = PQ6M67LP4Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MeLiTestPedroF/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
