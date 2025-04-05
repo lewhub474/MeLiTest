@@ -35,36 +35,6 @@ struct DashboardView: View {
     }
 }
 
-
-
-
-import SwiftUI
-
-struct SearchBar: View {
-    @Binding var text: String
-    var onSearch: () -> Void
-
-    var body: some View {
-        HStack(spacing: 8) {
-            TextField("Buscar artículos...", text: $text)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 10)
-                .background(Color.white.opacity(0.95))
-                .cornerRadius(10)
-                .submitLabel(.search)
-
-            Button(action: onSearch) {
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .background(Color.blue)
-                    .clipShape(Circle())
-            }
-        }
-        .padding(.horizontal, 8) // espacio externo
-    }
-}
-
 #Preview {
     DashboardView()
 }

@@ -21,6 +21,7 @@
 		800132E72DA0F81800A75C35 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E62DA0F81800A75C35 /* ArticleCardView.swift */; };
 		800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */; };
 		800132EB2DA0F84A00A75C35 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132EA2DA0F84A00A75C35 /* BackgroundView.swift */; };
+		800132ED2DA10D5B00A75C35 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132EC2DA10D5B00A75C35 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		800132E62DA0F81800A75C35 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
 		800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		800132EA2DA0F84A00A75C35 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		800132EC2DA10D5B00A75C35 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				800132E22DA0F79F00A75C35 /* RemoteImage.swift */,
+				800132EC2DA10D5B00A75C35 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				800132B12DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift in Sources */,
 				800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */,
 				800132DE2DA0F74D00A75C35 /* Articles.swift in Sources */,
+				800132ED2DA10D5B00A75C35 /* SearchBar.swift in Sources */,
 				800132E32DA0F79F00A75C35 /* RemoteImage.swift in Sources */,
 				800132E02DA0F76F00A75C35 /* DashboardViewModel.swift in Sources */,
 			);
