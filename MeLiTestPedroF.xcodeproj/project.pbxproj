@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		800132B12DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */; };
-		800132B32DA0EA2D00A75C35 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132B22DA0EA2D00A75C35 /* ContentView.swift */; };
+		800132B32DA0EA2D00A75C35 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132B22DA0EA2D00A75C35 /* DashboardView.swift */; };
 		800132B52DA0EA2E00A75C35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800132B42DA0EA2E00A75C35 /* Assets.xcassets */; };
 		800132B82DA0EA2E00A75C35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 800132B72DA0EA2E00A75C35 /* Preview Assets.xcassets */; };
 		800132C22DA0EA2F00A75C35 /* MeLiTestPedroFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132C12DA0EA2F00A75C35 /* MeLiTestPedroFTests.swift */; };
 		800132CC2DA0EA2F00A75C35 /* MeLiTestPedroFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132CB2DA0EA2F00A75C35 /* MeLiTestPedroFUITests.swift */; };
 		800132CE2DA0EA2F00A75C35 /* MeLiTestPedroFUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132CD2DA0EA2F00A75C35 /* MeLiTestPedroFUITestsLaunchTests.swift */; };
+		800132DE2DA0F74D00A75C35 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132DD2DA0F74D00A75C35 /* Articles.swift */; };
+		800132E02DA0F76F00A75C35 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132DF2DA0F76F00A75C35 /* DashboardViewModel.swift */; };
+		800132E32DA0F79F00A75C35 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E22DA0F79F00A75C35 /* RemoteImage.swift */; };
+		800132E52DA0F80200A75C35 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E42DA0F80200A75C35 /* ArticleListView.swift */; };
+		800132E72DA0F81800A75C35 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E62DA0F81800A75C35 /* ArticleCardView.swift */; };
+		800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */; };
+		800132EB2DA0F84A00A75C35 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800132EA2DA0F84A00A75C35 /* BackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		800132AD2DA0EA2D00A75C35 /* MeLiTestPedroF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeLiTestPedroF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiTestPedroFApp.swift; sourceTree = "<group>"; };
-		800132B22DA0EA2D00A75C35 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		800132B22DA0EA2D00A75C35 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		800132B42DA0EA2E00A75C35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800132B72DA0EA2E00A75C35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		800132BD2DA0EA2F00A75C35 /* MeLiTestPedroFTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeLiTestPedroFTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,13 @@
 		800132C72DA0EA2F00A75C35 /* MeLiTestPedroFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeLiTestPedroFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		800132CB2DA0EA2F00A75C35 /* MeLiTestPedroFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiTestPedroFUITests.swift; sourceTree = "<group>"; };
 		800132CD2DA0EA2F00A75C35 /* MeLiTestPedroFUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiTestPedroFUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		800132DD2DA0F74D00A75C35 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		800132DF2DA0F76F00A75C35 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		800132E22DA0F79F00A75C35 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		800132E42DA0F80200A75C35 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		800132E62DA0F81800A75C35 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		800132EA2DA0F84A00A75C35 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +109,11 @@
 			isa = PBXGroup;
 			children = (
 				800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */,
-				800132B22DA0EA2D00A75C35 /* ContentView.swift */,
 				800132B42DA0EA2E00A75C35 /* Assets.xcassets */,
+				800132DB2DA0F6E600A75C35 /* View */,
+				800132DA2DA0F6E100A75C35 /* Model */,
+				800132DC2DA0F70D00A75C35 /* ViewModel */,
+				800132E12DA0F78D00A75C35 /* Components */,
 				800132B62DA0EA2E00A75C35 /* Preview Content */,
 			);
 			path = MeLiTestPedroF;
@@ -125,6 +142,42 @@
 				800132CD2DA0EA2F00A75C35 /* MeLiTestPedroFUITestsLaunchTests.swift */,
 			);
 			path = MeLiTestPedroFUITests;
+			sourceTree = "<group>";
+		};
+		800132DA2DA0F6E100A75C35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				800132DD2DA0F74D00A75C35 /* Articles.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		800132DB2DA0F6E600A75C35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				800132B22DA0EA2D00A75C35 /* DashboardView.swift */,
+				800132E42DA0F80200A75C35 /* ArticleListView.swift */,
+				800132E62DA0F81800A75C35 /* ArticleCardView.swift */,
+				800132E82DA0F82F00A75C35 /* ArticleDetailView.swift */,
+				800132EA2DA0F84A00A75C35 /* BackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		800132DC2DA0F70D00A75C35 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				800132DF2DA0F76F00A75C35 /* DashboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		800132E12DA0F78D00A75C35 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				800132E22DA0F79F00A75C35 /* RemoteImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +310,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				800132B32DA0EA2D00A75C35 /* ContentView.swift in Sources */,
+				800132EB2DA0F84A00A75C35 /* BackgroundView.swift in Sources */,
+				800132E72DA0F81800A75C35 /* ArticleCardView.swift in Sources */,
+				800132B32DA0EA2D00A75C35 /* DashboardView.swift in Sources */,
+				800132E52DA0F80200A75C35 /* ArticleListView.swift in Sources */,
 				800132B12DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift in Sources */,
+				800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */,
+				800132DE2DA0F74D00A75C35 /* Articles.swift in Sources */,
+				800132E32DA0F79F00A75C35 /* RemoteImage.swift in Sources */,
+				800132E02DA0F76F00A75C35 /* DashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -430,6 +490,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +520,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
