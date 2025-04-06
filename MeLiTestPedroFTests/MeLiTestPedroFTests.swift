@@ -8,29 +8,32 @@
 import XCTest
 @testable import MeLiTestPedroF
 
-final class MeLiTestPedroFTests: XCTestCase {
+@MainActor
+final class DashboardViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_fetchArticles_success() async {
+        let mockUseCase = MockFetchArticlesUseCase()
+        let expectedArticles = [Article(id: 1, title: "Title", summary: "Summary", image_url: "2025-01-01", url: "", published_at: "")]
+        mockUseCase.resultToReturn = .success(expectedArticles)
+
+        let viewModel = DashboardViewModel(fetchArticlesUseCase: mockUseCase)
+        await viewModel.prepareAndFetchArticles()
+
+        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertEqual(viewModel.articles.count, 1)
+        XCTAssertEqual(viewModel.articles.first?.title, "Title")
+        XCTAssertNil(viewModel.errorMessage)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func test_fetchArticles_failure() async {
+        let mockUseCase = MockFetchArticlesUseCase()
+        mockUseCase.resultToReturn = .failure(URLError(.notConnectedToInternet))
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+        let viewModel = DashboardViewModel(fetchArticlesUseCase: mockUseCase)
+        await viewModel.prepareAndFetchArticles()
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        XCTAssertFalse(viewModel.isLoading)
+        XCTAssertTrue(viewModel.articles.isEmpty)
+        XCTAssertEqual(viewModel.errorMessage, "No tienes conexión a internet.")
     }
-
 }

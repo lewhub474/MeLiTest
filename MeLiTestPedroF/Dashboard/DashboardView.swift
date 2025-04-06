@@ -17,7 +17,9 @@ struct DashboardView: View {
                     SearchBar(
                         text: $viewModel.searchText,
                         onSearch: {
-                            viewModel.fetchArticles()
+                            Task {
+                                await viewModel.fetchArticles()
+                            }
                         }
                     )
                     if viewModel.isLoading {
@@ -38,7 +40,9 @@ struct DashboardView: View {
                     }
                 }
                 .onAppear {
-                    viewModel.fetchArticles()
+                    Task {
+                        await viewModel.fetchArticles()
+                    }
                 }
             }
             .padding(.horizontal, 10)

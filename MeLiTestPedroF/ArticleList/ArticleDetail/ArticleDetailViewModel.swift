@@ -10,11 +10,11 @@ import UIKit
 
 final class ArticleDetailViewModel: ObservableObject {
     let article: Article
-
+    
     init(article: Article) {
         self.article = article
     }
-
+    
     var formattedDate: String {
         let formatter = ISO8601DateFormatter()
         guard let date = formatter.date(from: article.published_at) else { return "" }
@@ -22,7 +22,7 @@ final class ArticleDetailViewModel: ObservableObject {
         displayFormatter.dateStyle = .medium
         return displayFormatter.string(from: date)
     }
-
+    
     func openInSafari() {
         guard let url = URL(string: article.url) else { return }
         UIApplication.shared.open(url)
