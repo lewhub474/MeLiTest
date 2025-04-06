@@ -35,6 +35,10 @@
 		8001330E2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001330D2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift */; };
 		800133102DA2C39800A75C35 /* MockFetchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001330F2DA2C39800A75C35 /* MockFetchArticlesUseCase.swift */; };
 		800133122DA2EE9E00A75C35 /* ImageActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800133112DA2EE9E00A75C35 /* ImageActionButton.swift */; };
+		800133142DA31B1D00A75C35 /* LocationPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800133132DA31B1D00A75C35 /* LocationPopup.swift */; };
+		8001331E2DA3236E00A75C35 /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001331D2DA3236E00A75C35 /* LocationRepository.swift */; };
+		800133202DA323AF00A75C35 /* LocationRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001331F2DA323AF00A75C35 /* LocationRepositoryImpl.swift */; };
+		800133222DA323D700A75C35 /* FetchCityUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800133212DA323D700A75C35 /* FetchCityUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		8001330D2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesUseCaseProtocol.swift; sourceTree = "<group>"; };
 		8001330F2DA2C39800A75C35 /* MockFetchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchArticlesUseCase.swift; sourceTree = "<group>"; };
 		800133112DA2EE9E00A75C35 /* ImageActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionButton.swift; sourceTree = "<group>"; };
+		800133132DA31B1D00A75C35 /* LocationPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopup.swift; sourceTree = "<group>"; };
+		8001331D2DA3236E00A75C35 /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		8001331F2DA323AF00A75C35 /* LocationRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepositoryImpl.swift; sourceTree = "<group>"; };
+		800133212DA323D700A75C35 /* FetchCityUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCityUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,13 +148,9 @@
 				800132F42DA17BD800A75C35 /* Info.plist */,
 				800132B02DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift */,
 				800132B42DA0EA2E00A75C35 /* Assets.xcassets */,
-				800132EF2DA10DDA00A75C35 /* Networking */,
-				800133052DA2BCBE00A75C35 /* Dashboard */,
-				800133042DA2BC6E00A75C35 /* ArticleList */,
-				800132DA2DA0F6E100A75C35 /* Model */,
+				800133182DA31D7B00A75C35 /* Presentation */,
 				8001330A2DA2BF3C00A75C35 /* Domain */,
-				800132F92DA1F27B00A75C35 /* Repository */,
-				800132E12DA0F78D00A75C35 /* Components */,
+				800133172DA31CBD00A75C35 /* Data */,
 				800132B62DA0EA2E00A75C35 /* Preview Content */,
 			);
 			path = MeLiTestPedroF;
@@ -178,13 +182,13 @@
 			path = MeLiTestPedroFUITests;
 			sourceTree = "<group>";
 		};
-		800132DA2DA0F6E100A75C35 /* Model */ = {
+		800132DA2DA0F6E100A75C35 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				800132DD2DA0F74D00A75C35 /* Articles.swift */,
 				800133082DA2BDA800A75C35 /* ArticleResponse.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		800132E12DA0F78D00A75C35 /* Components */ = {
@@ -193,6 +197,7 @@
 				800132EA2DA0F84A00A75C35 /* BackgroundView.swift */,
 				800132EC2DA10D5B00A75C35 /* SearchBar.swift */,
 				800133112DA2EE9E00A75C35 /* ImageActionButton.swift */,
+				800133132DA31B1D00A75C35 /* LocationPopup.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				8001330B2DA2BF7C00A75C35 /* UseCaseProtocol.swift */,
+				800133212DA323D700A75C35 /* FetchCityUseCase.swift */,
 				800132F22DA111FF00A75C35 /* FetchArticlesUseCase.swift */,
 				8001330D2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift */,
 			);
@@ -219,20 +225,19 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		800132F92DA1F27B00A75C35 /* Repository */ = {
+		800132F92DA1F27B00A75C35 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				800132FA2DA1F28B00A75C35 /* ArticleRepository.swift */,
+				8001331C2DA3235A00A75C35 /* LocationRepository */,
+				8001331B2DA3235000A75C35 /* ArticleRepository */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		800133042DA2BC6E00A75C35 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
 				800132E42DA0F80200A75C35 /* ArticleListView.swift */,
-				800133072DA2BD0B00A75C35 /* ArticleDetail */,
-				800133062DA2BCEE00A75C35 /* ArticleCard */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -267,9 +272,57 @@
 		8001330A2DA2BF3C00A75C35 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8001331A2DA3213400A75C35 /* Entities */,
 				800132EE2DA10DD100A75C35 /* UseCases */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		800133172DA31CBD00A75C35 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				800132EF2DA10DDA00A75C35 /* Networking */,
+				800132F92DA1F27B00A75C35 /* Repositories */,
+			);
+			name = Data;
+			path = Domain/Data;
+			sourceTree = "<group>";
+		};
+		800133182DA31D7B00A75C35 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				800133052DA2BCBE00A75C35 /* Dashboard */,
+				800133042DA2BC6E00A75C35 /* ArticleList */,
+				800133062DA2BCEE00A75C35 /* ArticleCard */,
+				800133072DA2BD0B00A75C35 /* ArticleDetail */,
+				800132E12DA0F78D00A75C35 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8001331A2DA3213400A75C35 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				800132DA2DA0F6E100A75C35 /* Models */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		8001331B2DA3235000A75C35 /* ArticleRepository */ = {
+			isa = PBXGroup;
+			children = (
+				800132FA2DA1F28B00A75C35 /* ArticleRepository.swift */,
+			);
+			path = ArticleRepository;
+			sourceTree = "<group>";
+		};
+		8001331C2DA3235A00A75C35 /* LocationRepository */ = {
+			isa = PBXGroup;
+			children = (
+				8001331D2DA3236E00A75C35 /* LocationRepository.swift */,
+				8001331F2DA323AF00A75C35 /* LocationRepositoryImpl.swift */,
+			);
+			path = LocationRepository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +461,7 @@
 				800132FD2DA1F31A00A75C35 /* APIClient.swift in Sources */,
 				800132F32DA111FF00A75C35 /* FetchArticlesUseCase.swift in Sources */,
 				800132FB2DA1F28B00A75C35 /* ArticleRepository.swift in Sources */,
+				8001331E2DA3236E00A75C35 /* LocationRepository.swift in Sources */,
 				800132F82DA1BFC900A75C35 /* ArticleDetailViewModel.swift in Sources */,
 				800132E52DA0F80200A75C35 /* ArticleListView.swift in Sources */,
 				800132F12DA1114500A75C35 /* NetworkingProvider.swift in Sources */,
@@ -423,6 +477,9 @@
 				800133032DA1F3CA00A75C35 /* APIClientError.swift in Sources */,
 				8001330C2DA2BF7C00A75C35 /* UseCaseProtocol.swift in Sources */,
 				800132FF2DA1F32B00A75C35 /* RequestBuilder.swift in Sources */,
+				800133142DA31B1D00A75C35 /* LocationPopup.swift in Sources */,
+				800133202DA323AF00A75C35 /* LocationRepositoryImpl.swift in Sources */,
+				800133222DA323D700A75C35 /* FetchCityUseCase.swift in Sources */,
 				800133092DA2BDA800A75C35 /* ArticleResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

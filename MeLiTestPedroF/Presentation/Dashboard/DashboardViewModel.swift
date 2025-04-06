@@ -15,12 +15,18 @@ final class DashboardViewModel: ObservableObject {
     @Published var searchText: String = ""
     @Published var isLoading = false
     @Published var errorMessage: String?
+    @Published var city: String = ""
     
     private let fetchArticlesUseCase: FetchArticlesUseCaseProtocol
+    private let fetchCityUseCase: FetchCityUseCase
     private var cancellables = Set<AnyCancellable>()
     
-    init(fetchArticlesUseCase: FetchArticlesUseCaseProtocol = FetchArticlesUseCase()) {
+    init(
+        fetchArticlesUseCase: FetchArticlesUseCaseProtocol = FetchArticlesUseCase(),
+        fetchCityUseCase: FetchCityUseCase
+    ) {
         self.fetchArticlesUseCase = fetchArticlesUseCase
+        self.fetchCityUseCase = fetchCityUseCase
         setupSearchTextObserver()
     }
     
@@ -93,6 +99,18 @@ final class DashboardViewModel: ObservableObject {
         }
     }
     
+    func fetchCity() async {
+        city = "Obteniendo ubicación..."
+        do {
+            let cityName = try await fetchCityUseCase.execute()
+            city = cityName
+        } catch {
+            print("Error obteniendo ubicación: \(error.localizedDescription)")
+            city = "Error obteniendo ubicación"
+        }
+    }
+
+
     private func errorMessage(for error: Error) -> String {
         if let apiClientError = error as? APIClientError {
             switch apiClientError {
