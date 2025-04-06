@@ -17,6 +17,7 @@
             </dict>
         </dict>
     </dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Necesitamos tu ubicación para mostrar tu ciudad actual en el Dashboard.</string>
 </dict>
 </plist>
-

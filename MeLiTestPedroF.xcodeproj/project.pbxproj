@@ -34,6 +34,7 @@
 		8001330C2DA2BF7C00A75C35 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001330B2DA2BF7C00A75C35 /* UseCaseProtocol.swift */; };
 		8001330E2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001330D2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift */; };
 		800133102DA2C39800A75C35 /* MockFetchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8001330F2DA2C39800A75C35 /* MockFetchArticlesUseCase.swift */; };
+		800133122DA2EE9E00A75C35 /* ImageActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800133112DA2EE9E00A75C35 /* ImageActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		8001330B2DA2BF7C00A75C35 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		8001330D2DA2C32A00A75C35 /* FetchArticlesUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchArticlesUseCaseProtocol.swift; sourceTree = "<group>"; };
 		8001330F2DA2C39800A75C35 /* MockFetchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchArticlesUseCase.swift; sourceTree = "<group>"; };
+		800133112DA2EE9E00A75C35 /* ImageActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			children = (
 				800132EA2DA0F84A00A75C35 /* BackgroundView.swift */,
 				800132EC2DA10D5B00A75C35 /* SearchBar.swift */,
+				800133112DA2EE9E00A75C35 /* ImageActionButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				800132F82DA1BFC900A75C35 /* ArticleDetailViewModel.swift in Sources */,
 				800132E52DA0F80200A75C35 /* ArticleListView.swift in Sources */,
 				800132F12DA1114500A75C35 /* NetworkingProvider.swift in Sources */,
+				800133122DA2EE9E00A75C35 /* ImageActionButton.swift in Sources */,
 				800132F62DA1BE3A00A75C35 /* ArticleCardViewModel.swift in Sources */,
 				800132B12DA0EA2D00A75C35 /* MeLiTestPedroFApp.swift in Sources */,
 				800132E92DA0F82F00A75C35 /* ArticleDetailView.swift in Sources */,

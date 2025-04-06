@@ -20,14 +20,8 @@ struct SearchBar: View {
                 .cornerRadius(10)
                 .submitLabel(.search)
             
-            Button(action: onSearch) {
-                Image("searchlogo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 70, height: 70)
-                    .foregroundColor(.white)
-                    .clipShape(Circle())
-            }
+            ImageActionButton(icon: "searchlogo", width: 70, height: 70,action: onSearch)
+
         }
         .padding(.horizontal, 8)
     }
