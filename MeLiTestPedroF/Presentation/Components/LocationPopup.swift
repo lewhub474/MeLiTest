@@ -13,7 +13,7 @@ struct LocationPopup: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Text("Estás en:")
+            Text("Estás en la ciudad de:")
                 .font(.headline)
             Text(city)
                 .font(.title)
@@ -23,7 +23,7 @@ struct LocationPopup: View {
                 onDismiss()
             }
             .padding(.top, 8)
-            .foregroundColor(.white)
+            .foregroundColor(.black)
         }
         .padding()
         .background(.ultraThinMaterial)

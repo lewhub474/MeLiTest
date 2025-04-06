@@ -17,7 +17,7 @@ final class ArticleDetailViewModel: ObservableObject {
     
     var formattedDate: String {
         let formatter = ISO8601DateFormatter()
-        guard let date = formatter.date(from: article.published_at) else { return "" }
+        guard let date = formatter.date(from: article.publishedAt) else { return "" }
         let displayFormatter = DateFormatter()
         displayFormatter.dateStyle = .medium
         return displayFormatter.string(from: date)

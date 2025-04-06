@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleCard: View {
-    @ObservedObject var viewModel: ArticleCardViewModel
+    @StateObject var viewModel: ArticleCardViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

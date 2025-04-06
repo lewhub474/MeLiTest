@@ -110,7 +110,6 @@ final class DashboardViewModel: ObservableObject {
         }
     }
 
-
     private func errorMessage(for error: Error) -> String {
         if let apiClientError = error as? APIClientError {
             switch apiClientError {

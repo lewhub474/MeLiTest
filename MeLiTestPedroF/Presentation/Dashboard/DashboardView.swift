@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @State private var showPopup = false
     @StateObject private var viewModel = DashboardViewModel(
         fetchArticlesUseCase: FetchArticlesUseCase(),
-        fetchCityUseCase: FetchCityUseCase(repository: LocationRepositoryImpl())
-    )
+        fetchCityUseCase: FetchCityUseCase(repository: LocationRepositoryImpl()))
     
-    @State private var showPopup = false
-
     var body: some View {
-        ZStack {
-            NavigationStack {
+        NavigationStack {
+            ZStack {
                 BackgroundView {
                     VStack(spacing: 16) {
                         SearchBar(
@@ -52,6 +50,27 @@ struct DashboardView: View {
                     }
                 }
                 .padding(.horizontal, 10)
+                if showPopup {
+                    LocationPopup(city: viewModel.city) {
+                        showPopup = false
+                    }
+                    .transition(.scale)
+                    .zIndex(1)
+                }
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        ImageActionButton(icon: "localrocket", width: 90, height: 90) {
+                            Task {
+                                await viewModel.fetchCity()
+                                showPopup = true
+                            }
+                        }
+                    }
+                }
+                .padding()
             }
             .alert("Error", isPresented: viewModel.isPresentingError, actions: {
                 Button("OK") {
@@ -60,28 +79,6 @@ struct DashboardView: View {
             }, message: {
                 Text(viewModel.errorMessage ?? "")
             })
-
-            if showPopup {
-                LocationPopup(city: viewModel.city) {
-                    showPopup = false
-                }
-                .transition(.scale)
-                .zIndex(1)
-            }
-
-            VStack {
-                Spacer()
-                HStack {
-                    Spacer()
-                    ImageActionButton(icon: "localrocket2", width: 90, height: 90) {
-                        Task {
-                            await viewModel.fetchCity()
-                            showPopup = true
-                        }
-                    }
-                }
-            }
-            .padding()
         }
     }
 }
