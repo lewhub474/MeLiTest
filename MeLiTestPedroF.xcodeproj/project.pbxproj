@@ -200,6 +200,7 @@
 				800132EC2DA10D5B00A75C35 /* SearchBar.swift */,
 				800133112DA2EE9E00A75C35 /* ImageActionButton.swift */,
 				800133132DA31B1D00A75C35 /* LocationPopup.swift */,
+				800133232DA3429100A75C35 /* SplashScreen.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -298,7 +299,6 @@
 				800133062DA2BCEE00A75C35 /* ArticleCard */,
 				800133072DA2BD0B00A75C35 /* ArticleDetail */,
 				800132E12DA0F78D00A75C35 /* Components */,
-				800133232DA3429100A75C35 /* SplashScreen.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
