@@ -14,26 +14,31 @@ final class RequestBuilder {
     private var queryParameters: [String: String] = [:]
     private var body: Data?
 
+    @discardableResult
     func setPath(_ path: String) -> Self {
         self.path = path
         return self
     }
 
+    @discardableResult
     func setMethod(_ method: HTTPMethod) -> Self {
         self.method = method
         return self
     }
 
-    @discardableResult func addHeader(key: String, value: String) -> Self {
+    @discardableResult
+    func addHeader(key: String, value: String) -> Self {
         headers[key] = value
         return self
     }
 
+    @discardableResult
     func addQueryParameter(key: String, value: String) -> Self {
         queryParameters[key] = value
         return self
     }
 
+    @discardableResult
     func setJSONBody<T: Encodable>(_ encodable: T) -> Self {
         self.body = try? JSONEncoder().encode(encodable)
         addHeader(key: "Content-Type", value: "application/json")

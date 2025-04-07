@@ -6,105 +6,58 @@
 //
 
 import Foundation
-import Combine
-import SwiftUI
 
-@MainActor
 final class DashboardViewModel: ObservableObject {
     @Published var articles: [Article] = []
     @Published var searchText: String = ""
     @Published var isLoading = false
-    @Published var errorMessage: String?
     @Published var city: String = ""
+    @Published var showArticleList: Bool = false
+    @Published var errorMessage: String?
+    @Published var isPresentingError: Bool = false
     
-    private let fetchArticlesUseCase: FetchArticlesUseCaseProtocol
-    private let fetchCityUseCase: FetchCityUseCase
-    private var cancellables = Set<AnyCancellable>()
-    
+    private let fetchArticlesUseCase: any UseCase<String?, [Article]>
+    private let fetchCityUseCase: any UseCase<Any?, String>
+
     init(
-        fetchArticlesUseCase: FetchArticlesUseCaseProtocol = FetchArticlesUseCase(),
-        fetchCityUseCase: FetchCityUseCase
+        fetchArticlesUseCase: any UseCase<String?, [Article]> = FetchArticlesUseCase(),
+        fetchCityUseCase: any UseCase<Any?, String> = FetchCityUseCase()
     ) {
         self.fetchArticlesUseCase = fetchArticlesUseCase
         self.fetchCityUseCase = fetchCityUseCase
-        setupSearchTextObserver()
-    }
-    
-    var showEmptyState: Bool {
-        !isLoading && articles.isEmpty
-    }
-    
-    var showArticleList: Bool {
-        !isLoading && !articles.isEmpty
-    }
-    
-    var isPresentingError: Binding<Bool> {
-        Binding(
-            get: { self.errorMessage != nil },
-            set: { newValue in
-                if !newValue {
-                    self.errorMessage = nil
-                }
-            }
-        )
     }
     
     func dismissError() {
         errorMessage = nil
+        isPresentingError = false
     }
     
-    private func setupSearchTextObserver() {
-        $searchText
-            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                Task {
-                    await self?.prepareAndFetchArticles()
-                }
-            }
-            .store(in: &cancellables)
-    }
-    
-    func prepareAndFetchArticles() async {
-        isLoading = true
-        defer { isLoading = false }
-        articles = []
-        do {
-            let result = try await fetchArticlesUseCase.execute(searchText)
-            switch result {
-            case .success(let fetchedArticles):
-                self.articles = fetchedArticles
-            case .failure(let error):
-                self.errorMessage = errorMessage(for: error)
-            }
-        } catch {
-            self.errorMessage = errorMessage(for: error)
-        }
-    }
-    
+    @MainActor
     func fetchArticles() async {
         isLoading = true
         defer { isLoading = false }
         
-        do {
-            let result = try await fetchArticlesUseCase.execute(searchText)
-            switch result {
-            case .success(let fetchedArticles):
-                self.articles = fetchedArticles
-            case .failure(let error):
-                self.errorMessage = errorMessage(for: error)
-            }
-        } catch {
+        let result = await fetchArticlesUseCase.execute(searchText)
+        
+        switch result {
+        case .success(let fetchedArticles):
+            self.articles = fetchedArticles
+        case .failure(let error):
             self.errorMessage = errorMessage(for: error)
+            self.isPresentingError = true
         }
     }
     
+    @MainActor
     func fetchCity() async {
         city = "Obteniendo ubicación..."
-        do {
-            let cityName = try await fetchCityUseCase.execute()
+        
+        let response = await fetchCityUseCase.execute(nil)
+        
+        switch response {
+            case .success(let cityName):
             city = cityName
-        } catch {
+        case .failure(let error):
             print("Error obteniendo ubicación: \(error.localizedDescription)")
             city = "Error obteniendo ubicación"
         }

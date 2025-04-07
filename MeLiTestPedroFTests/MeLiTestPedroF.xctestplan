@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "6A5623D3-7515-4C24-B947-A7E5DBD1B0A6",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:MeLiTestPedroF.xcodeproj",
+      "identifier" : "800132AC2DA0EA2D00A75C35",
+      "name" : "MeLiTestPedroF"
+    },
+    "uiTestingScreenshotsLifetime" : "keepNever"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MeLiTestPedroF.xcodeproj",
+        "identifier" : "800132BC2DA0EA2F00A75C35",
+        "name" : "MeLiTestPedroFTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MeLiTestPedroF.xcodeproj",
+        "identifier" : "800132C62DA0EA2F00A75C35",
+        "name" : "MeLiTestPedroFUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

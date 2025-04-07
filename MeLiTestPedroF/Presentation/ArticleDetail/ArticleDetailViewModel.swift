@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 final class ArticleDetailViewModel: ObservableObject {
     let article: Article
@@ -21,10 +20,5 @@ final class ArticleDetailViewModel: ObservableObject {
         let displayFormatter = DateFormatter()
         displayFormatter.dateStyle = .medium
         return displayFormatter.string(from: date)
-    }
-    
-    func openInSafari() {
-        guard let url = URL(string: article.url) else { return }
-        UIApplication.shared.open(url)
     }
 }

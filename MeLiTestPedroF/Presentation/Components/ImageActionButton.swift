@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ImageActionButton: View {
     let icon: String
-    var width: CGFloat = 90
-    var height: CGFloat = 90
+    var size: CGFloat = 90
     let action: () -> Void
 
     var body: some View {
@@ -18,7 +17,10 @@ struct ImageActionButton: View {
             Image(icon)
                 .resizable()
                 .scaledToFit()
-                .frame(width: width, height: height)
+                .frame(
+                    width: size,
+                    height: size
+                )
                 .clipShape(Circle())
         }
         .padding()

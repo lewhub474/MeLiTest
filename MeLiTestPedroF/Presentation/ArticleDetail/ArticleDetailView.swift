@@ -14,25 +14,54 @@ struct ArticleDetailView: View {
         _viewModel = StateObject(wrappedValue: ArticleDetailViewModel(article: article))
     }
     
+    var asyncImage: some View {
+        AsyncImage(url: URL(string: viewModel.article.imageUrl)) { phase in
+            switch phase {
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, minHeight: 250)
+                    .clipped()
+                    .cornerRadius(16)
+            default:
+                Rectangle()
+                    .fill(Color.gray.opacity(0.3))
+                    .frame(maxWidth: .infinity, minHeight: 250)
+                    .cornerRadius(16)
+            }
+        }
+    }
+    
+    func detailLabelButton() -> some View {
+        HStack {
+            Image(systemName: "safari")
+            Text("Leer en el sitio")
+        }
+        .font(.headline)
+        .foregroundColor(.white)
+        .padding()
+        .frame(maxWidth: .infinity)
+        .background(Color.blue)
+        .cornerRadius(12)
+    }
+    
+    @ViewBuilder
+    var detailButton: some View {
+        if let destination = URL(string: viewModel.article.url) {
+            Link(
+                destination: destination,
+                label: detailLabelButton
+            )
+        } else {
+            detailLabelButton()
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                AsyncImage(url: URL(string: viewModel.article.imageUrl)) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: .infinity, minHeight: 250)
-                            .clipped()
-                            .cornerRadius(16)
-                    default:
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.3))
-                            .frame(maxWidth: .infinity, minHeight: 250)
-                            .cornerRadius(16)
-                    }
-                }
+                asyncImage
                 
                 Text(viewModel.article.title)
                     .font(.title)
@@ -47,20 +76,7 @@ struct ArticleDetailView: View {
                     .font(.body)
                     .foregroundColor(.primary)
                 
-                Button(action: {
-                    viewModel.openInSafari()
-                }) {
-                    HStack {
-                        Image(systemName: "safari")
-                        Text("Leer en el sitio")
-                    }
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(12)
-                }
+                detailButton
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

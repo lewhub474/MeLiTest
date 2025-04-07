@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct BackgroundView<Content: View>: View {
-    let content: () -> Content
     @State private var isLandscape: Bool = UIDevice.current.orientation.isLandscape
+    
+    let content: () -> Content
     
     init(@ViewBuilder content: @escaping () -> Content) {
         self.content = content

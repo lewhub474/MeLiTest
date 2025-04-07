@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     var onSearch: () -> Void
+    private let size = 70.0
     
     var body: some View {
         HStack() {
@@ -20,7 +21,11 @@ struct SearchBar: View {
                 .cornerRadius(10)
                 .submitLabel(.search)
             
-            ImageActionButton(icon: "searchlogo", width: 70, height: 70,action: onSearch)
+            ImageActionButton(
+                icon: "searchlogo",
+                size: 70,
+                action: onSearch
+            )
 
         }
         .padding(.horizontal, 8)
