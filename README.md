@@ -7,7 +7,7 @@ Aplicación iOS desarrollada como prueba técnica para Mercado Libre , enfocada 
 ##  Requisitos
 
 - iOS 16.0+
-- Xcode 16.3. 
+- Xcode 16.3 
 - Swift 5.9+
 
 -La aplicación no requiere instalar pod o dependencias, se desarrolló en un entorno de herramientas nativas de Swift. 
@@ -24,7 +24,7 @@ Para clonar:
 - **CoreLocation**: Para acceder a la ubicación del usuario.
 - **MVVM + UseCases + Repository Pattern**
 - **Arquitectura basada en Atomic Design**: organización modular por componentes.
-- **Pruebas unitarias estan desarrolladas con la nueva libreria Testing. Más información: https://developer.apple.com/documentation/testing/migratingfromxctest
+- **Pruebas unitarias** están desarrolladas con la nueva libreria Testing. Más información: https://developer.apple.com/documentation/testing/migratingfromxctest
 
 ---
 
