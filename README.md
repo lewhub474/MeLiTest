@@ -7,7 +7,7 @@ Aplicación iOS desarrollada como prueba técnica para Mercado Libre , enfocada 
 ##  Requisitos
 
 - iOS 16.0+
-- Xcode 15+ - Xcode 16.3 para pruebas unitarias+
+- Xcode 16.3. 
 - Swift 5.9+
 
 -La aplicación no requiere instalar pod o dependencias, se desarrolló en un entorno de herramientas nativas de Swift. 
